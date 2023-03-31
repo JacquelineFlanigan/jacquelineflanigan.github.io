@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Enabling Otoscopy Predictions For Hearing Infections</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="four is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Portfolio Projects</a></h1>
+						<nav class="links">
+							<ul>
+						</nav>
+						<nav class="main">
+							<ul>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">Enabling Otoscopy Predictions For Hearing Infections</a></h2>
+										<p>Python Analysis</p>
+									</div>
+								</header>
+								<p><b>Objectives & Questions that will drive the analysis: </b><br>
+									•	Filter picture dataset to contain only relevant photos <br>
+                                    •	Create a CNN model capable of reading images <br>
+                                    •	Is it possible for a machine learning model to detect whether an otoscope image contains an infection?
+								</p>
+
+								<p><b>Cleaning & Preparation: </b><br>
+								The unfiltered dataset contained imagery of otoscopes (photos of the inner ear) that had a wide range of conditions, such as “object in ear”, “excessive earwax”, etc. Since more of these categories did not pertain to our research, they were removed. The only ones left were otoscopes that contained ears that had an infection and “normal” healthy ears. The untransformed data can be found in this <b><a href="https://www.kaggle.com/datasets/omduggineni/otoscopedata">LINK</a></b> here .  
+								</p>
+
+								<p>The following actions were performed to prepare the data: <br>
+								•	Eliminated duplicate pictures and images that did not correspond to the data <br>
+								•	Gray-scaled all images for better model detection <br>
+								•	 Used Keras ImageDataGenerator to alter and increase the images in the train set to improve the performance of the model
+								</p>
+
+								<p><b>Data Analysis: </b><br>
+								To answer our target question, analysis was done using a convolutional neural network.
+							    </p>
+								
+								<p>The following actions were performed to prepare the model: <br>
+								•	Early stopping for epochs (otherwise known as how many passes the dataset has gone forwards and backwards) <br>
+								•	Balanced class weights since normal class includes more “normal” imagery than ones with an infection present <br>
+								•	Fine-tuned parameters with “adam” since it is known for running well with sparse data <br>
+								•	Determined that the VGG model was the right choice for this particular data since it is known for the classification and localization of imagery <br>
+
+
+								<p><b>Visualization: </b><br>
+								Since we determined that the VGG16 model was the best fit for our data with an accuracy of 80 percent in its predictive power and doesn't take much time to run. Looking at an accuracy plot, we were able to verify that both the train and test accuracy were high for the model. In addition, we included a confusion matrix that displayed the model’s prediction had gotten better as out of the abnormal class, 162 images were predicted correctly. Access to the full code can be found by clicking this <b><a href="https://github.com/JacquelineFlanigan/Enabling-Otoscopy-Predictions-for-Hearing-Infection">LINK</a></b> here.
+							    </p>
+                                <span class="image featured"><img src="images/Project4Picture1.jpg" alt="" /></span> <br>
+                                <span class="image featured"><img src="images/Project4Picture2.jpg" alt="" /></span>
+								
+								<p><b>Conclusion: </b><br>
+								To summarize, we were able to answer our question and prove that yes, we can build a convolutional neural network that could detect if an otoscopy had an infection present. We accomplished this with the VGG16 CNN model which has an 80% prediction accuracy given the filtered dataset it was trained and tested on. While this appears to be a relatively reliable prediction model with that accuracy score, it should be noted that high accuracy does not automatically mean it is a reliable model. A downside to using accuracy is that it masks the issue of class imbalance.
+							    </p>
+
+
+								<p>Luckily accuracy is not the only measure for a model’s performance and is just one out of four different measures; the others are precision, recall, and F1 score. While the namesakes for each of the measurements are straightforward, they all have pros and cons to each of them. Although we won’t be going into detail for these measurements, the main takeaway is that though our model was built with accuracy in mind, it would be better for future iterations to use the F1 score to monitor its metrics. This is mainly because the imagery available at this time is limited and has an uneven class distribution, which F1 scores are better at working with while also being a good balance between recall and precision. It is also recommended that more abnormal imagery be obtained, possibly through duplication, so that further testing and tweaking of the model can be done. For now, though we have seen that is possible to use a machine learning model to detect whether an otoscope image contains an infection.
+  
+							    </p>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+				<section id="footer">
+					<ul class="icons">
+						<li><a href="https://www.linkedin.com/in/jacqueline-flanigan/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://medium.com/@jacquelineflanigan" class="fas fa-blog"><span class="label">Blog</span></a></li>
+						<li><a href="https://github.com/JacquelineFlanigan" class="fab fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="mailto: flaniganjacqueline@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+					</ul>
+					<p class="copyright">&copy; JFlanigan.</p>
+				</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
